@@ -12,3 +12,15 @@ before_install:
 
 script:
   - docker run lekvar21/udemy-docker-react yarn run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "udemy-docker-react"
+  env: "UdemyDockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-853210130410"
+  bucket_path: "udemy-docker-react"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  on:
+    branch: master

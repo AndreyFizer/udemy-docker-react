@@ -1,5 +1,6 @@
 sudo: required
 
+language: node
 services:
   - docker
 
@@ -7,4 +8,4 @@ before_install:
   - docker build -t lekvar21/udemy-docker-react -f Dockerfile.dev .
 
 script:
-  - docker run USERNAME/docker-react npm run test -- --coverage
+  - docker run USERNAME/docker-react yarn run test -- --coverage

@@ -11,4 +11,4 @@ before_install:
   - docker build -t lekvar21/udemy-docker-react -f Dockerfile.dev .
 
 script:
-  - docker run USERNAME/docker-react yarn run test -- --coverage
+  - docker run lekvar21/udemy-docker-react yarn run test -- --coverage
